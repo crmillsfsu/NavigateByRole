@@ -2,12 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NavigateByRole.Views.InstructorView"
-             Title="InstructorView">
+             Title="InstructorView"
+             >
     <VerticalStackLayout>
         <Label 
             Text="Instructor View!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <ListView
+            ItemsSource="{Binding Path=Courses}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Path=Display}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <Button
             Text="Cancel"
             Clicked="CancelClicked"
